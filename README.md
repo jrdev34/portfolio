@@ -29,3 +29,11 @@ DATABASE_URL=mysql://root:password@127.0.0.1:3306/portfolio?serverVersion=mariad
 
 
 MAILER_DSN=
+
+Démarer le serveur
+
+symfony serve
+
+
+npm run dev
+
