@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 use ApiPlatform\Core\Annotation\ApiResource;
 
@@ -13,12 +12,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
  * Class Formation
  * @package App\Entity
  * @ORM\Entity(repositoryClass="App\Repository\FormationRepository")
- * @ApiResource(
- *     attributes={
- *         "normalization_context"={"groups"={"read"}},
- *     }
- * )
-
+ * @ApiResource()
  */
 class Formation
 {
@@ -27,7 +21,7 @@ class Formation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * @ORM\Column(type="integer")
-     * @Groups({"read"})
+     *
 
      */
     private ?int $id = null;
@@ -44,7 +38,7 @@ class Formation
      * @var string|null
      * @ORM\Column
      * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     * @Groups({"read"})
+     *
 
      */
     private ?string $school = null;
@@ -53,8 +47,6 @@ class Formation
      * @var int|null
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     * @Groups({"read"})
-
      *
      */
     private ?int $gradeLevel = null;
@@ -70,7 +62,6 @@ class Formation
      * @var DateTimeInterface|null
      * @ORM\Column(type="date_immutable")
      * @Assert\NotBlank(message="Ce champ ne peut pas être vide.")
-     * @Groups({"read"})
 
      */
     private ?DateTimeInterface $startedAt = null;
@@ -78,7 +69,7 @@ class Formation
     /**
      * @var DateTimeInterface|null
      * @ORM\Column(type="date_immutable", nullable=true)
-     * @Groups({"read"})
+     *
 
      */
     private ?DateTimeInterface $endedAt = null;
