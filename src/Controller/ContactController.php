@@ -29,7 +29,7 @@ class ContactController extends AbstractController
 
             $message = (new Email())
                 ->from($contactFormData['email'])
-                ->to('ton@gmail.com')
+                ->to('testsymfony01@outlook.fr')
                 ->subject('vous avez reçu unn email')
                 ->text('Sender : '.$contactFormData['email'].\PHP_EOL.
                        $contactFormData['message'],
